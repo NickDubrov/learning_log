@@ -11,6 +11,7 @@ def register(request):
     else:
         # Обработка заполненной формы.
         form = UserCreationForm(data=request.POST)
+
         if form.is_valid():
             new_user = form.save()
             # Выполнение входа и перенаправление на домашнюю страницу.
