@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c@%k&pa)d)ii7yy=t&b7%j93zjjyc8&umx3x%@7e6j7wqj4-!x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     # Мои приложения
     'learning_logs',
     'users',
+
+    # Сторонние приложения
+    'bootstrap4',
 
     # Приложения django по умолчанию.
     'django.contrib.admin',
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,3 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Мои настройки
 LOGIN_URL = '/users/login/'
+LOGIN_REDIRECT_URL = 'learning_logs:index'
+LOGOUT_REDIRECT_URL = 'learning_logs:index'

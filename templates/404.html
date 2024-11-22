@@ -1,0 +1,22 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+  <div class='row'>
+    <div class="col text-center">
+      <h1 class="display-1">404</h1>
+      <h2 class="display-5">Page Not Found</h2>
+      <p class="lead">The requested URL was not found on this server.</p>
+    </div>
+  </div>
+
+{% endblock page_header %}
+
+{% block content %}
+  <div class='row'>
+    <div class="col text-center">
+      <a class="btn btn-primary btn-lg" href="{% url 'learning_logs:index' %}" role="button">
+        Go Home</a>
+    </div>
+  </div>
+  
+{% endblock content %}
